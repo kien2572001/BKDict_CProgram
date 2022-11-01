@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="BKDict" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/BKDict" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="`pkg-config gtk+-3.0 --cflags`" />
+				</Compiler>
+				<Linker>
+					<Add option="`pkg-config gtk+-3.0 --libs` -export-dynamic" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/BKDict" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="`pkg-config gtk+-2.0 --cflags`" />
+		</Compiler>
+		<Linker>
+			<Add option="`pkg-config gtk+-2.0 --libs`" />
+			<Add library="src/lib/libbt.a" />
+		</Linker>
+		<Unit filename="glade/window_main.glade" />
+		<Unit filename="src/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/soundex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/soundex.h" />
+		<Unit filename="style.css" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
